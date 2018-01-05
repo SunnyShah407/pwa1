@@ -6,8 +6,22 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+// Import the AF2 Module
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireOfflineModule } from 'angularfire2-offline';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyBd6dAbh-X-1GPV56yp5DqI7XKOIhAXWLc",
+  authDomain: "pwa1-41f53.firebaseapp.com",
+  databaseURL: "https://pwa1-41f53.firebaseio.com",
+  storageBucket: "",
+  messagingSenderId: "1"
+};
 
 @NgModule({
   declarations: [
@@ -18,6 +32,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireOfflineModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
