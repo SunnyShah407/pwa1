@@ -10,6 +10,13 @@
 <ion-content padding>
   <h3>Ionic Menu Starter</h3>
 
+  <h1>{{ (info | async)?.name }}</h1>
+  <ion-list>
+    <ion-item class="text" *ngFor="let task of tasks | async">
+      {{task.name}}
+    </ion-item>
+  </ion-list>
+
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
