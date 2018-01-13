@@ -14,9 +14,13 @@ export class HomePage {
   info: AfoObjectObservable<any[]>;
   tasks: AfoListObservable<any[]>;
 
-  constructor(public navCtrl: NavController, firebaseProvider: FirebaseProvider) {
-    this.info = firebaseProvider.getInfo();
-    this.tasks= firebaseProvider.getTasks();
+  constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
+    
+  }
+
+  ionViewDidLoad() {
+    this.info = this.firebaseProvider.getInfo();
+    this.tasks= this.firebaseProvider.getTasks();
   }
 
 }
