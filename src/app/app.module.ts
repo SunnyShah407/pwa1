@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { LoginPageModule } from '../pages/login/login.module';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
@@ -31,8 +32,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
-    LoginPage
+    ListPage
   ],
   imports: [
     BrowserModule,
@@ -41,6 +41,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireOfflineModule,
+    LoginPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
